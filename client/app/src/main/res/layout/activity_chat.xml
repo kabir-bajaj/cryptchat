@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relativeLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".ui.activity.ChatResponseActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_margin="20dp"
+        >
+
+        <TextView
+            android:id="@+id/textView"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/textView_style"
+            android:text="Common secret" />
+
+        <EditText
+            android:id="@+id/txt_key"
+            style="@style/editText_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:maxLines="1"
+            android:editable="false"
+            android:gravity="center"
+            android:hint="Private key"
+            android:imeOptions="actionDone"
+            android:textColor="#fa0206"
+            />
+
+        <EditText
+            android:id="@+id/txt_message"
+            style="@style/editText_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="vertical"
+
+            android:ems="10"
+            android:hint="insert message"
+            android:imeOptions="actionDone"
+            android:inputType="textPersonName"
+            android:paddingStart="8dp"
+            android:paddingLeft="8dp"
+            android:textStyle="bold"
+            />
+
+        <Button
+            android:id="@+id/btnEncrypt"
+            style="@style/button_style"
+
+            android:onClick="encrypt"
+            android:text="Encrypt Message"
+            />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            >
+
+            <TextView
+                android:id="@+id/txt_encrypted"
+                style="@style/textview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+                android:layout_alignBottom="@+id/btnSend"
+                android:layout_marginLeft="4dp"
+
+                android:layout_marginEnd="-2dp"
+                android:layout_marginRight="-2dp"
+                android:layout_marginBottom="0dp"
+                android:layout_toStartOf="@+id/btnSend"
+                android:layout_toLeftOf="@id/btnSend"
+                android:hint="Encrypted Message"
+                android:maxLines="4"
+                android:padding="15dp"
+                android:scrollbars="vertical"
+                android:textColor="#ffffff"
+                android:textColorHint="#ffffff"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+
+            <ImageButton
+
+                android:id="@+id/btnSend"
+                android:layout_width="80dp"
+                android:layout_alignParentRight="true"
+                android:layout_height="80dp"
+                android:scaleType="fitXY"
+
+                android:background="#00000000"
+                android:cropToPadding="false"
+                android:onClick="send"
+                android:adjustViewBounds="true"
+                app:srcCompat="@drawable/sendd" />
+        </RelativeLayout>
+
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="80dp"
+          android:orientation="vertical"
+          >
+
+          <TextView
+              android:id="@+id/txt_received"
+              style="@style/textview"
+              android:scrollbars = "vertical"
+              android:maxLines="3"
+
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:hint="Message received"
+              android:padding="10dp"
+              android:textColor="#ffffff"
+              android:textColorHint="#ffffff"
+              android:textSize="17sp"
+              android:textStyle="bold" />
+
+          <Button
+              android:id="@+id/btnDecrypt"
+              style="@style/button_style"
+              android:layout_toRightOf="@id/txt_received"
+              android:onClick="decrypt"
+              android:text="Decrypt" />
+      </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>
